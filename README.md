@@ -3,6 +3,7 @@ My linux desktop settings
 
 Application list
 -------------------------
+* i3
 * dunst
 * vim
 

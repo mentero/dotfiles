@@ -1,0 +1,1 @@
+/home/adebski/dotfiles/i3/.i3
