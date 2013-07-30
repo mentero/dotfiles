@@ -13,3 +13,8 @@ Vim
 > Remember to BundleInstall on your first vim run
 
     :BundleInstall
+
+Git
+-------------------------
+> Also require meld
+
