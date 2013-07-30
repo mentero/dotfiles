@@ -1,0 +1,9 @@
+[user]
+	email = artur.debski@polcode.net
+	name = Artur Debski
+[color]
+	ui = true
+[core]
+	editor = vim
+[merge]
+	tool = meld
