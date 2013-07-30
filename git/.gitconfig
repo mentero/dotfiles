@@ -7,3 +7,7 @@
 	editor = vim
 [merge]
 	tool = meld
+[alias]
+	co = checkout
+[apply]
+	whitespace = nowarn
