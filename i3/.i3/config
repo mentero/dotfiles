@@ -15,14 +15,16 @@ font xft: tamsynmod 8
 # Theme
 
 #class                  border  backgr. text
-client.focused          #d5fac8 #d5fac8 #a6e22e
-client.focused_inactive #2e3436 #2e3436 #b9c8d1
-client.unfocused        #2e3436 #2e3436 #999999
-client.urgent           #cd989a #cd989a #2e3436
+client.focused          #DD1E2F #DD1E2F #192823 #DD1E2F
+client.focused_inactive #EBB035 #EBB035 #192823 #EBB035
+client.unfocused        #D0C6B1 #D0C6B1 #192823 #D0C6B1
+client.urgent           #06A2CB #06A2CB #192823 #06A2CB
 
-client.background                #121212
+client.background                #192823
 
-new_window 1pixel
+default_orientation auto
+new_window pixel 2
+hide_edge_borders vertical
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -85,35 +87,47 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# switch between the current and the previously focused one
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth
 # focus the parent container
 bindsym $mod+a focus parent
-
+bindsym $mod+z focus child
 # focus the child container
 #bindsym $mod+d focus child
-
+set $ws1 I
+set $ws2 II
+set $ws3 III
+set $ws4 IV
+set $ws5 V
+set $ws6 VI
+set $ws7 VII
+set $ws8 VIII
+set $ws9 IX
+set $ws10 X
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1 
+bindsym $mod+2 workspace $ws2 
+bindsym $mod+3 workspace $ws3 
+bindsym $mod+4 workspace $ws4 
+bindsym $mod+5 workspace $ws5 
+bindsym $mod+6 workspace $ws6 
+bindsym $mod+7 workspace $ws7 
+bindsym $mod+8 workspace $ws8 
+bindsym $mod+9 workspace $ws9 
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1 
+bindsym $mod+Shift+2 move container to workspace $ws2 
+bindsym $mod+Shift+3 move container to workspace $ws3 
+bindsym $mod+Shift+4 move container to workspace $ws4 
+bindsym $mod+Shift+5 move container to workspace $ws5 
+bindsym $mod+Shift+6 move container to workspace $ws6 
+bindsym $mod+Shift+7 move container to workspace $ws7 
+bindsym $mod+Shift+8 move container to workspace $ws8 
+bindsym $mod+Shift+9 move container to workspace $ws9 
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -152,11 +166,19 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-        status_command i3status
+  status_command i3status
+  tray_output primary
 	font xft: tasynmod 8
+  colors {
+    background  #181818
+    statusline  #D0C6B1
+    separator   #D0C6B1
+    focused_workspace   #181818 #D0C6B1 #181818
+    active_workspace    #181818 #181818 #D0C6B1
+    inactive_workspace  #181818 #181818 #D0C6B1 
+    urgent_workspace    #181818 #DD1E2F #D0C6B1
+  }
 }
 
-# Custom keys
-bindsym $mod+o exec 'odeskteam-qt4'
-bindsym $mod+b exec 'google-chrome'
-bindsym $mod+m exec 'spotify'
+# Media Keys
+
