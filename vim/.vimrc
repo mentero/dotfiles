@@ -21,13 +21,16 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-unimpaired'
 syntax on
 let mapleader=','
 set number
 map <silent> <C-n> :NERDTreeFocus<CR>
-
+nnoremap <leader>w <C-w>w
+nnoremap <leader><Tab> <C-w>w
 set hlsearch
 set incsearch
+" set foldmethod=syntax
 
 set t_Co=256
 set background=dark
