@@ -1,0 +1,102 @@
+[user]
+	email = xmentero@gmail.com
+	name = Artur Debski
+[color]
+	ui = true
+[core]
+	editor = vim
+	excludesfile = /Users/mentero/.gitignore
+	autocrlf = input
+[merge]
+	tool = opendiff
+[alias]
+    co = checkout
+    s  = status
+    st = status
+    pull = pull --rebase
+    pure = pull --rebase
+
+    hard = reset --hard
+    soft = reset --soft
+
+    ss = status -s -b
+    ##########
+    d = diff
+    ##########
+    c = commit
+    cm = commit -m
+    ca = commit --amend
+    ##########
+    a = add
+    ad = add .
+    aa = add -A
+    ap = add -p
+    ##########
+    l = log --oneline
+    lg = log --oneline --graph --decorate
+    ##########
+    co = checkout
+    cob = checkout -b
+    ##########
+    rb = rebase
+    rbi = rebase -i
+    ##########
+    b = branch
+    ba = branch -a
+    bm = branch --merge
+    bnm = branch --no-merge
+    ##########
+    m = merge
+    ##########
+    pat = format-patch master --stdout
+    patd = format-patch develop --stdout
+    ##########
+    ; st = stash
+    stp = stash pop
+    ##########
+    ps = push
+    pl = pull
+    pb = pull --rebase
+    pso = push origin
+    plo = pull origin
+    pbo = pull --rebase origin
+    ##########
+    subpl = submodule foreach git pull origin master
+[color "branch"]
+    current = yellow bold
+    local = white
+    remote = cyan
+[color "diff"]
+    meta = white dim
+    frag = cyan dim
+    whitespace = red reverse
+[color "status"]
+    added = green
+    changed = red
+    untracked = yellow
+[color "decorate"]
+    HEAD = green
+    branch = blue
+    remoteBranch = cyan
+    stash = white dim
+    tag = magenta
+[push]
+    default = tracking
+[branch]
+    autosetupmerge = true
+[apply]
+    whitespace = nowarn
+[mergetool]
+    keepBackup = false
+[rerere]
+	enabled = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true

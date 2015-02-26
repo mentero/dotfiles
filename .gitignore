@@ -1,1 +1,6 @@
-vim/.vim/bundle/
+*.swo
+*.swp
+*~
+.DS_Store
+
+.ruby-gemset
